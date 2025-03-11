@@ -1,0 +1,9 @@
+services:
+  php:
+    image: php:8.3
+  web:
+    image: apache2
+  database:
+    image: mariadb:latest
+  cache:
+    image: redis:latest
