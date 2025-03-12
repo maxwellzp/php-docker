@@ -10,4 +10,6 @@ RUN apt update \
 RUN apt-get update \
     && docker-php-ext-install opcache
 
+RUN pecl install redis-6.1.0 && docker-php-ext-enable redis
+
 RUN a2enmod rewrite negotiation

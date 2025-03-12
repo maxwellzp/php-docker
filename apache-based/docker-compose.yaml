@@ -11,6 +11,8 @@ services:
       - cache
     volumes:
       - ./application:/var/www/html
+    env_file:
+      - .app.env
   database:
     image: mariadb:11.7.2
     container_name: "database-container"
@@ -20,7 +22,7 @@ services:
     volumes:
       - mysqldata:/var/lib/mysql
     env_file:
-      - ./database_credentials.env
+      - ./database.env
   cache:
     image: redis:7-alpine
     container_name: "cache-container"
